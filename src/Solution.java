@@ -1,15 +1,13 @@
-import java.util.HashMap;
-import java.util.Scanner;
-import java.util.Map;
+import java.util.*;
 
 public class Solution {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        String line = sc.nextLine();
+        String line = sc.nextLine().trim();
 
-        String[] words = line.split(" ");
-        HashMap<String, Integer> map = new HashMap<>();
+        String[] words = line.split("\\s+");
+        Map<String, Integer> map = new LinkedHashMap<>();
 
         for (String word : words) {
             map.put(word, map.getOrDefault(word, 0) + 1);
@@ -22,11 +20,10 @@ public class Solution {
             System.out.print(entry.getKey() + ": " + entry.getValue());
             count++;
             if (count < size) {
-                System.out.println();
+                System.out.print("\n");
             }
         }
 
         sc.close();
     }
 }
-//g
