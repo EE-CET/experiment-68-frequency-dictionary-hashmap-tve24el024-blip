@@ -13,16 +13,23 @@ public class Solution {
             map.put(word, map.getOrDefault(word, 0) + 1);
         }
 
+        StringBuilder sb = new StringBuilder();
+
         int count = 0;
         int size = map.size();
 
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            System.out.print(entry.getKey() + ": " + entry.getValue());
+            sb.append(entry.getKey())
+              .append(": ")
+              .append(entry.getValue());
+            
             count++;
             if (count < size) {
-                System.out.print("\n");
+                sb.append("\n");
             }
         }
+
+        System.out.print(sb.toString());
 
         sc.close();
     }
