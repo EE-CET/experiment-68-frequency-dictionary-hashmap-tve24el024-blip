@@ -15,8 +15,15 @@ public class Solution {
             map.put(word, map.getOrDefault(word, 0) + 1);
         }
 
+        int count = 0;
+        int size = map.size();
+
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
+            System.out.print(entry.getKey() + ": " + entry.getValue());
+            count++;
+            if (count < size) {
+                System.out.println();
+            }
         }
 
         sc.close();
